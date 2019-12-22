@@ -1,10 +1,22 @@
 let path = require('path')
+let HtmlWebpackPlugin = require('html-webpack-plugin')
+let MiniCssExtractPlugin = require('mini-css-extract-plugin')
+let base = require('./webpack.config.base.js')
 module.exports = {
+    ...base,
+    devtool: 'inline-source-map',
+    devServer: {
+        contentBase: "./dist"
+    },
     mode: 'development', //比production多注释
-    entry: './src/index.js',
-    output: {
-        path: path.resolve(__dirname, 'dist'),
-        filename: '[name].[contenthash].js'
+    module: {
+        rules: [
+            ...base.module.rules,
+            {
+                test: /\.css$/i,
+                use: ["style-loader", "css-loader"]
+            }
+        ]
     }
 
 };
