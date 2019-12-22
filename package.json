@@ -15,7 +15,7 @@
   },
   "scripts": {
     "start": "webpack-dev-server",
-    "build": "rm -r dist && webpack --config webpack.config.prod.js"
+    "build": "rm -rf dist && webpack --config webpack.config.prod.js"
   },
   "dependencies": {
     "html-webpack-plugin": "^3.2.0",
