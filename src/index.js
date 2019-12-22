@@ -7,7 +7,7 @@ const div = document.querySelector('#app')
 div.innerHTML = `<img src = "${jpg}">`
 
 const button = document.createElement('button')
-button.innerText = '懒加载'
+button.innerText = '懒加载1'
 button, onclick = () => {
     const lazy = import('./lazy')
     lazy.then((module) => {
